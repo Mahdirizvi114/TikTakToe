@@ -1,7 +1,9 @@
 from tkinter import *
 root=Tk()
-root.geometry("500x470")
+root.title('Tik Tak Toe')
+root.geometry("500x600")
 root.resizable(0,0)
+root.configure(bg="#FFFEFA")
 
 c=1
 def show(b):
@@ -14,8 +16,6 @@ def show(b):
     else:
         if b['text']=='':
             b['text']='X'
-
-
 
     # Main Logic for row 1
 
@@ -143,58 +143,74 @@ def Reset():
     bt8['text']=''
     bt9['text']=''
     
-    # bt1.config(bg='')
-    # bt2.config(bg='')
-    # bt3.config(bg='')
-    # bt4.config(bg='')
-    # bt5.config(bg='')
-    # bt6.config(bg='')
-    # bt7.config(bg='')
-    # bt8.config(bg='')
-    # bt9.config(bg='')
+    bt1.config(bg='grey')
+    bt2.config(bg='grey')
+    bt3.config(bg='grey')
+    bt4.config(bg='grey')
+    bt5.config(bg='grey')
+    bt6.config(bg='grey')
+    bt7.config(bg='grey')
+    bt8.config(bg='grey')
+    bt9.config(bg='grey')
 
-def show1(e):
-    l.config(text="Welcome to  my application  ",font=("Batang 16 bold"), relief="sunken") 
-    l=Label(root) 
-    root.bind("<Enter>", show1)
+
+
+
+
+
+        
 
 
 #row 1
-bt1=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt1))
+bt1=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove', command=lambda :show(bt1))
 bt1.grid(row=0, column=0)
+bt1.place(x=73, y=70)
 
-bt2=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt2))
+bt2=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt2))
 bt2.grid(row=0, column=1)
+bt2.place(x=196, y=70)
 
-bt3=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt3))
+bt3=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt3))
 bt3.grid(row=0, column=2)
+bt3.place(x=320, y=70)
 
 # row 2
-bt4=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt4))
+bt4=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt4))
 bt4.grid(row=1, column=0)
+bt4.place(x=73, y=205)
 
-bt5=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt5))
+bt5=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt5))
 bt5.grid(row=1, column=1)
+bt5.place(x=196, y=205)
 
-bt6=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt6))
+bt6=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt6))
 bt6.grid(row=1, column=2)
+bt6.place(x=320, y=205)
 
 # Row 3
-bt7=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt7))
+bt7=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', relief='groove',command=lambda :show(bt7))
 bt7.grid(row=2, column=0)
+bt7.place(x=196, y=340)
 
-bt8=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt8))
+bt8=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey',relief='groove', command=lambda :show(bt8))
 bt8.grid(row=2, column=1)
+bt8.place(x=73, y=340)
 
-bt9=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey', command=lambda :show(bt9))
+bt9=Button(root, text="",width=10, height=5, font=("Arial",15),bg='grey',relief='groove', command=lambda :show(bt9))
 bt9.grid(row=2, column=2)
+bt9.place(x=320, y=340)
 
 #For Button
-bt_reset=Button(root,text="Reset",command=Reset)
-bt_reset.grid(row=3,column=1)
+bt_reset=Button(root,text="Reset",font=("arial 15 bold"), relief='groove', command=Reset)
+bt_reset.grid(row=10,column=8)
+bt_reset.place(x=225, y=500)
 
 #For label
-lb=Label(root, text="",bg='blue',fg='white')
+lb=Label(root, text="",bg='white',fg='Black',font=("arial 15 bold"),relief='groove')
 lb.grid(row=4,column=0)
+lb.place(x=0, y=550)
+
+lb1= Label(root, text="Welcome To My Game", font=("arial 15 bold"),relief='groove')
+lb1.place(x=150, y=10)
 
 root.mainloop()
